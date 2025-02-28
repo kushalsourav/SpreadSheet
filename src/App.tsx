@@ -17,7 +17,7 @@ function App() {
     <>
   
       <Toolbar />
-      <FormulaBar />
+      {/* <FormulaBar /> */}
     <SpreadSheet setShowValidation={setShowValidation}/>
     {showValidation && <ColumnValidationModal onClose={() => setShowValidation(false)} />}
  

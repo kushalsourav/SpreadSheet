@@ -53,8 +53,8 @@ This project uses the following data structures:
 ## Installation & Setup
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/kushalsourav/spreadsheet.git
-   cd spreadsheet
+   git clone https://github.com/kushalsourav/SpreadSheet.git
+   cd SpreadSheet
    ```
 2. **Install dependencies**
    ```sh
