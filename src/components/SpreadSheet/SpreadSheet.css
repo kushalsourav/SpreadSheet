@@ -1,0 +1,204 @@
+
+.table-container {
+    overflow: auto;
+    border: 1px solid #dadce0;
+    font-family: Arial, sans-serif;
+    height: 70vh;
+
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #e0e0e0 transparent; 
+}
+
+
+.custom-table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+
+
+.col-header {
+    position: relative;
+    height: 15px;
+    width: 100px;
+    min-width: 95px;
+    text-align: center;
+    border: 1px solid #d2d2d2;
+    padding: 4px;
+    font-size: 10px;
+    font-weight: 400;
+    color: #2d2d2d;
+    background-color: #f8f9fa;
+}
+
+
+.row-header {
+    position: relative;
+    
+    width: 50px;
+    height: 15px;
+    min-height: 15px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    font-size: 12px;
+    font-weight: 400;
+    color: #2d2d2d;
+    background-color: #f8f9fa;
+}
+
+
+.cell {
+    height: 15px;
+    width: 95px;
+    min-width: 95px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+
+.cell-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background: transparent;
+    padding: 2px;
+}
+
+
+.cell:hover {
+    background-color: #f1f3f4;
+}
+
+
+.highlight-cell {
+    border: 2px solid blue !important;
+    outline: none;
+}
+
+.highlight-header {
+    background-color: rgba(0, 0, 255, 0.2) !important;
+}
+
+.col-resizer {
+    position: absolute;
+    right: -2px;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    cursor: col-resize;
+    background: transparent;
+}
+
+.col-resizer:hover {
+    background: gray;
+}
+
+
+.row-resizer {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    cursor: row-resize;
+    background: transparent;
+}
+
+.row-resizer:hover {
+    background: gray;
+}
+
+
+.column-resizer {
+    position: absolute;
+    right: -3px; 
+    top: 0;
+    width: 5px;
+    height: 100%;
+    cursor: col-resize;
+    opacity: 0.7; 
+    transition: background-color 0.2s ease-in-out;
+    z-index: 1000; 
+    background: transparent;
+}
+
+.column-resizer:hover {
+    background-color: gray;
+    opacity: 1;
+}
+
+
+.table-container::-webkit-scrollbar {
+    width: 6px; 
+    height: 6px; 
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #b0b0b0; 
+    border-radius: 10px; 
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #8a8a8a; 
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: transparent; 
+    border-radius: 10px;
+}
+
+.table-container {
+    overflow: auto;
+    max-height: 500px; /* Adjust based on your needs */
+    position: relative;
+  }
+  
+  .custom-table {
+    border-collapse: collapse;
+    width: max-content; /* Ensure columns don't shrink */
+  }
+  
+  .col-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  .row-header {
+    position: sticky;
+    left: 0;
+    background: white;
+    z-index: 3;
+    text-align: center;
+  }
+  
+
+  .cell {
+    position: relative;
+  }
+  
+  .drag-handle {
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    width: 8px;
+    height: 8px;
+    background-color: blue;
+    border-radius: 100%;
+    cursor: crosshair;
+    border: 1px solid #068fff; 
+    
+  }
+  
+  .selected-cell {
+    background-color: rgba(0, 120, 215, 0.2); 
+    transition: background-color 0.3s ease-in-out;
+    
+  }
+  
