@@ -4,8 +4,9 @@ import { useSpreadsheet } from "@/hooks/useSpreadSheet";
 import { useDragFill } from "@/hooks/useDragFill"; 
 import RowResizer from "../RowResizer/RowResizer";
 import ColumnResizer from "../ColumnResizer/ColumnResizer";
+import { SpreadsheetGridProps } from "@/types/types";
 
-const SpreadsheetGrid: React.FC = ({setShowValidation} : any) => {
+const SpreadsheetGrid: React.FC<SpreadsheetGridProps> = ({setShowValidation} : any) => {
   const tableRef = useRef<HTMLTableElement>(null);
   const { state, dispatch, colHeaders, rowHeaders, handleInputChange, handleCellFocus,  }: any = useSpreadsheet();
   const { draggedCells, handleDragStart, handleDragOver, handleDragEnd } = useDragFill();

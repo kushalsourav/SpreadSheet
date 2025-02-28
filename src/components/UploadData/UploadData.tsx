@@ -20,14 +20,14 @@ const UploadData: React.FC = () => {
       const sheet = workbook.Sheets[sheetName];
       const parsedData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
-      const newData: Record<string, string | number> = {};
+      const newData: any = {};
       let maxCols = 0;
       let maxRows = parsedData.length;
 
-      parsedData.forEach((row: any[], rowIndex: number) => {
+      parsedData.forEach((row: any, rowIndex: number) => {
         maxCols = Math.max(maxCols, row.length);
-        row.forEach((cell, colIndex) => {
-          const colLetter = String.fromCharCode(65 + colIndex); // Convert index to column letter (A, B, C...)
+        row.forEach((cell: string | number, colIndex : number) => {
+          const colLetter = String.fromCharCode(65 + colIndex); 
           const cellKey = `${colLetter}${rowIndex + 1}`;
           newData[cellKey] = cell;
         });
@@ -41,7 +41,7 @@ const UploadData: React.FC = () => {
         dispatch({ type: "ADD_ROW", payload: maxRows - state.rows + 5 });
       }
       if (maxCols > state.cols) {
-        dispatch({ type: "ADD_COL", payload: maxCols - state.cols + 5});
+        dispatch({ type: "ADD_COLUMN", payload: maxCols - state.cols + 5});
       }
     };
 
